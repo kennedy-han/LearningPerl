@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+
+print "input a string:\n";
+chomp($str = <STDIN>);
+
+print "input a num for repeat that string:\n";
+chomp($num = <STDIN>);
+
+$result = ($str."\n") x $num ;
+print "The result is\n$result\n";

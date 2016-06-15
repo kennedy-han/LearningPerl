@@ -1,0 +1,17 @@
+#!/usr/bin/perl -w
+
+$pi = 3.141592654;
+
+print "What's the radius of the circle : ";
+
+chomp($radius = <STDIN>);
+if ($radius < 0)
+{
+	$length = 0;
+}
+else
+{
+	$length = 2 * $pi * $radius;
+}
+
+print "The length of $radius circle is $length.\n";
