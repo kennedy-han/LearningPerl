@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+@list = qw ( fred betty barney dino wilma pebbles bamm-bamm );
+
+chomp( @lines = <STDIN>);
+
+foreach $index (@lines) {
+	
+	print "$list[$index - 1]\t";
+}
+
+print "\n";

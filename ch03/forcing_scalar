@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+
+@rocks = qw ( talc quartz jade obsidian );
+print "How many rocks do you have ?\n";
+print "I have ", @rocks, " rocks!\n";
+print "I have ", scalar @rocks, " rocks!\n";	#4 the sum of the rocks
+print "I have ", $#rocks, " rocks!\n";	#3 because from index 0 add to 3
