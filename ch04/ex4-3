@@ -1,0 +1,50 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+sub total {
+
+	my @numbers = @_;
+	my $sum = 0;
+
+	foreach my $temp ( @numbers ) {
+
+		$sum += $temp;
+	}
+
+	$sum;
+}
+
+sub above_average {
+
+	my @numbers = @_;
+	my @return_numbers;
+
+	my $avg_number = &get_mean(@numbers);	
+
+	foreach my $temp_num ( @numbers ) {
+
+		if ( $temp_num > $avg_number ) {
+			
+			push @return_numbers, $temp_num;
+		}	
+	}
+
+	@return_numbers;
+}
+
+sub get_mean {
+
+	my $count = @_;
+	my $sum = &total( @_ );
+	
+	$sum / $count;
+}
+
+
+my @fred = above_average(1..10);
+print "\@fred is @fred\n";
+print "(Should be 6 7 8 9 10)\n";
+my @barney = above_average(100, 1..10);
+print "\@barney is @barney\n";
+print "(Should be just 100)\n";

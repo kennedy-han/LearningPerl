@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+
+use strict;
+#use feature 'state';
+use 5.010;
+
+sub greet {
+
+	state $name_persist = "";
+	my $new_name = $_[0];
+
+	if ($name_persist eq ""){
+
+		print ("Hi $new_name! You are the first one here!\n");	
+	}
+	else{
+		
+		print ("Hi $new_name! $name_persist is also here!\n");	
+	}
+
+	$name_persist = $new_name;
+}
+
+&greet( "Fred" );
+&greet( "Barney" );
