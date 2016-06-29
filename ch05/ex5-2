@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+print "Enter some lines and press Control+D : \n";
+
+chomp(my @list = <STDIN>);
+
+print "1234567890"x4 ."\n" ;
+
+foreach (@list){
+
+	printf "%20s\n", "$_";
+}

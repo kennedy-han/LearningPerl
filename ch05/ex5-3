@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+print "Enter the column width : \n";
+
+chomp (my $width = <STDIN>);
+
+print "Enter some lines and press Control+D : \n";
+
+chomp(my @list = <STDIN>);
+
+print "1234567890" x(($width +9) /10)."\n" ;
+
+foreach (@list){
+
+	printf "%$width"."s\n", "$_";
+}
