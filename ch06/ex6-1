@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+
+my %maps = (
+	fred	=> 'flintstone',
+	barney	=> 'rubble',
+	wilma	=> 'flintstone',	
+);
+
+while ( 1 ) {
+	chomp ( my $name = <STDIN> );
+
+	if ( exists $maps{$name} ) {
+
+		print "The family name of $name is: $maps{$name}\n";
+	} else {
+
+		print "Sorry, doesn't exists.\n";
+	}
+}

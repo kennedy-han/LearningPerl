@@ -1,0 +1,4 @@
+#!/usr/bin/perl -w
+
+print "PATH is $ENV{PATH}\n";
+print "Encyclopedia is $ENV{Encyclopedia}\n";

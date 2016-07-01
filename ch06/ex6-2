@@ -1,0 +1,18 @@
+#!/usr/bin/perl 
+use strict;
+
+chomp ( my @words = <STDIN> );
+
+#print "words it's @words \n";
+
+my %maps;
+
+foreach (@words){
+
+	$maps{$_} = $maps{$_} +1;
+}
+
+foreach my $key (sort keys %maps) {
+
+	print "$key => $maps{$key}\n";
+}
