@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+my @lines = <STDIN>;
+
+foreach (@lines) {
+
+	if(/(f|F)red/) {	#It can be /[fF]red/ or /fred|Fred/ either
+
+		print "$_\n";
+	}
+
+}

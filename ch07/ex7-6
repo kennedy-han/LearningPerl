@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+my @lines = <STDIN>;
+
+foreach (@lines) {
+
+	if(/wilma.*fred|fred.*wilma/) {
+
+		print "$_\n";
+	}
+
+}
