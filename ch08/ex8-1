@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+my $test_string = "beforematchafter";
+
+if ($test_string =~ /match/) {
+	print "Matched: |$`<$&>$'|\n";  # the special match vars
+} else {
+	print "No match: |$_|\n";
+}

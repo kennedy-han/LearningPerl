@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+while (<>) {                   # take one input line at a time
+	chomp;
+	if (/( )$/) {	#same as \s\z
+		print "Matched: \'$_'#\n";
+	} else {
+		print "No match: |$_|\n";
+	}
+}
