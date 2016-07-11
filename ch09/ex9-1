@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+## Copyright (C) 2016 by kennedy
+
+my $what = "fred";
+
+if ( "fredfredfred" =~ /($what){3}/ ) {
+
+	print "Matched! \n";
+} else {
+
+	print "Non Match! \n";
+}

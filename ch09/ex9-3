@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+
+$^I = ".out";
+
+while(<>) {
+
+	s/Fred/NUL/gi;	#replace Fred to NUL
+	s/Wilma/Fred/gi;
+	s/NUL/Wilma/gi;	#replace NUL to Wilma
+	print;
+}

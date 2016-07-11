@@ -1,0 +1,32 @@
+#!/usr/bin/perl -w
+
+# build a hash
+my %do_list;
+
+foreach(@ARGV){
+
+	$do_list{$_} = 1;
+}
+
+# if had copyright, then remove from hash
+while(<>) {
+
+	if(/\A## Copyright/){
+
+		delete $do_list{$ARGV};	
+	}
+}
+
+# change ARGV to apply copyright
+@ARGV = sort keys %do_list;
+
+$^I = ".bak";
+
+while(<>) {
+
+	if(/\A#!/){	# is it the shebang line?
+
+		$_ .= "## Copyright (C) 2016 by kennedy\n";
+	}
+	print;
+}
