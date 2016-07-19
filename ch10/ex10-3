@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+
+# print System Environment variables and set 3 ENV variables to print, use default undefined to print.
+
+$ENV{ZERO} = 0;
+$ENV{EMPTY} = '';
+$ENV{UNDEFINED} = undef;
+
+my $longest = 0;
+
+foreach my $key ( keys %ENV ) {
+	
+	if ( length( $key ) > $longest ) {
+
+		$longest = length ( $key );
+	}
+}
+
+foreach my $key (sort keys %ENV) {
+
+	printf "%-${longest}s %s \n", $key, $ENV{$key} // "(undefined)";
+}

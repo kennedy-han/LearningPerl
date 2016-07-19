@@ -1,0 +1,32 @@
+#!/usr/bin/perl -w
+
+# Guess a number between 0-100, with debug info.
+
+my $debug = $ENV{DEBUG} // 1;
+
+my $result = int(1+ rand 100);
+print "Debug: the secret number it's $result \n"
+	if $debug;
+
+print "Please enter a num between 0-100: \n";
+
+while(my $user_guess = <STDIN>) {
+
+	if ( $user_guess =~ /quit|exit|\A\s*\z/i) {
+
+		print "Sorry you gave up. The number was $result. \n";
+		last;
+	}
+
+	if($user_guess > $result) {
+
+		print "too high!\n";
+	} elsif ( $user_guess < $result) {
+
+		print "too low!\n";
+	} elsif ( $user_guess == $result) {
+
+		print "you got it!\n";
+		last;
+	}
+}
