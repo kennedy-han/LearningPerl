@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+
+#use built-in module File::Basename to get the file name and print it out.
+
+use File::Basename;
+
+my $name = "/usr/local/bin/perl";
+my $basename = basename $name;	#gives 'perl'
+
+print "$basename\n";

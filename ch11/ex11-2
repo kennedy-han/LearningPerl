@@ -1,0 +1,24 @@
+#!/usr/bin/perl -w 
+
+#using DateTime to compute the interval between now and a date that you enter as the year, month, and day on the command line.
+
+use DateTime;
+
+my $now = DateTime->from_epoch( epoch => time );	#get current time
+
+my $then = DateTime->new(	#set up a new time from command variable
+	year	=> $ARGV[0],
+	month	=> $ARGV[1], 
+	day	=> $ARGV[2],
+	);
+
+if ( $now < $then ) {
+
+	die "You entered a date in the future!\n";
+}
+
+my $duration = $now - $then;	#date math
+
+my @units = $duration->in_units( qw(years months days) );	#because math is complicated ,can't just turn that into one number
+
+printf "%d years, %d months, and %d days\n", @units;
