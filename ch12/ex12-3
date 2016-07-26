@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+die "No file names supplied!\n" unless @ARGV;
+
+my @list_file; 
+
+foreach (@ARGV) {
+
+	push @list_file, "$_" if -r -w -o;
+}
+
+print "The list file of readable, writable, and owned by you, are: @list_file\n";

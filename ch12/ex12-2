@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+
+die "No file names supplied!\n" unless @ARGV;
+
+my $oldest_name = shift @ARGV; 
+my $oldest_day = -M $oldest_name;
+
+foreach my $file (@ARGV) {
+
+	my $days = -M $file;
+	if ( $days > $oldest_day ) {
+
+		$oldest_name = $file;
+		$oldest_day = $days;
+	}
+}
+
+printf "The oldest file named: %s, and it was %.1f days old.\n", $oldest_name, $oldest_day;
