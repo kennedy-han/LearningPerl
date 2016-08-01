@@ -1,0 +1,27 @@
+#!/usr/bin/perl -w
+
+# This program works like ln, without any optional command line. And the second param can be a directory.
+
+use File::Basename;
+use File::Spec;
+
+my $symlink = $ARGV[0] eq '-s';
+shift @ARGV if $symlink;
+
+my ($source, $dest) = @ARGV;
+
+if (-d $dest) {
+
+	my $basename = basename $source;
+	$dest = File::Spec->catfile($dest, $basename);
+}
+
+if ($symlink) {
+
+	symlink $source, $dest
+		or die "Can't link '$source' to '$dest': $! \n";
+} else {
+
+	link $source, $dest
+		or die "Can't link '$source' to '$dest': $! \n";
+}

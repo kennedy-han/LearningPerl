@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+
+# This program find any symbolic links in the current directory.
+
+my @files = <* .*>;
+
+foreach (@files) {
+
+	my $where = readlink "$_";
+	print "$_ -> $where\n" if defined $where;
+}

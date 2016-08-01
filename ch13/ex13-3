@@ -1,0 +1,26 @@
+#!/usr/bin/perl -w
+
+# for ex13-1, using another way (opendir) to convey
+
+print "Which directory? (Default is your home directory) \n";
+
+chomp(my $input_dir = <STDIN>);
+
+if ($input_dir =~ /\A\s*\Z/ ){
+
+chdir 
+	or die "Cannot chdir to your home directory: $!";
+
+} else {
+
+chdir $input_dir 
+	or die "Cannot open $input_dir: $!";
+}
+
+opendir DOT, "." or die "Can't opendir dot: $!";
+
+foreach (sort readdir DOT) {
+
+	# next if /\A\./; ##	if we were skipping dot files
+	print "$_\n";
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/perl -w
+
+# This program works like mv, without any optional command line. And the second param can be a directory.
+# Note, This example code by my self, not on the book!!! The book using Module File::Basename and File::Spec
+
+my ($source, $dest) = @ARGV;
+
+if (-d $dest) {
+
+	rename $source, "$dest/$source";
+} else {
+
+	rename $source, $dest;
+}

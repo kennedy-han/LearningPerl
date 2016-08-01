@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+
+# Ask user for a directory name ,then change to that directory, and list out the file in that directory, and shows .file
+
+print "Which directory? (Default is your home directory) \n";
+
+chomp(my $input_dir = <STDIN>);
+
+if ($input_dir =~ /\A\s*\Z/ ){
+
+chdir 
+	or die "Cannot chdir to your home directory: $!";
+
+} else {
+
+chdir $input_dir 
+	or die "Cannot open $input_dir: $!";
+}
+
+my @files = <* .*>;
+
+foreach (sort @files) {
+
+	print "$_\n";
+}
