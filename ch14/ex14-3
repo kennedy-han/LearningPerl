@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+print "Please enter a string: ";
+chomp (my $string = <STDIN>);
+print "Please enter a substring: ";
+chomp (my $sub = <STDIN>);
+
+my @places;
+
+for (my $pos = -1 ; ; ) { #tricky use of three-part for loop
+    $pos = index($string, $sub, $pos + 1);  #find next position
+    last if $pos == -1;
+    push @places, $pos;
+}
+
+print "Locations of '$sub' in '$string' were: @places\n";
