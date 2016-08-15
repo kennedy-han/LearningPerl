@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+# Given a number, this program will reports all the divisors except 1 and the number itself.
+
+use 5.010;
+
+my $my_favorate = 47; # set a favorate number
+
+print "Given a number: \n";
+
+chomp (my $number = <STDIN>);
+
+my @result;
+for ( 2 .. $number/2 + 1 ) {
+    when (not $number % $_) { push @result, $_ };
+}
+
+if ( ! $result){
+    print "$number is a prime number\n";
+} else {
+    print "$number divisors are: $result \n";
+}
+
+given( $result ) {
+    when( $_ ~~ 2 ) { say "Even number"; continue; }
+    when( !($_ ~~ 2) ) { say "Odd number"; continue;}
+}
+
+if( $number ~~ $my_favorate ) { say "my favo number"}

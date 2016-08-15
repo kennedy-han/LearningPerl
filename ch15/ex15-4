@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+
+# Given a number, this program will reports all the divisors except 1 and the number itself.
+
+use 5.010;
+
+print "Given a number: \n";
+
+chomp (my $number = <STDIN>);
+
+my $result = "";
+for ( 2 .. $number/2 + 1 ) {
+    when (not $number % $_) { $result .= "$_ " };
+}
+
+if ($result ~~ ""){
+    print "$number is a prime number\n";
+} else {
+    print "$number divisors are: $result\n";
+}

@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+
+# Takes a number as its input, then prints its divisible by.
+
+use 5.010;
+
+print "Input a number: \n";
+
+chomp(my $number = <STDIN>);
+
+my $what = '';
+
+given($number) {
+    when (not $_ % 3 ) { $what .= 'Fizz'; continue}
+    when (not $_ % 5 ) { $what .= 'Buzz'; continue}
+    when (not $_ % 7 ) { $what .= 'Sausage' }
+}
+
+say "$what";

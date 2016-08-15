@@ -1,0 +1,28 @@
+#!/usr/bin/perl -w
+
+# Guess a number between 0-100
+
+use 5.010;
+
+my $result = int(1+ rand 100);
+
+print "Please enter a num between 0-100: \n";
+
+while(my $user_guess = <STDIN>) {
+
+	if ( $user_guess =~ /quit|exit|\A\s*\z/i) {
+
+		print "Sorry you gave up. The number was $result. \n";
+		last;
+	}
+
+        given( $user_guess ) {
+            when( $_ > $result ) { say "Too high" }
+            when( $_ < $result ) { say "Too low" }
+            when( $_ == $result ) {
+                say "You got it!";
+                last;
+            }
+        }
+
+}
