@@ -1,0 +1,9 @@
+#!/usr/bin/perl -w
+
+# parse the output of date command to determine the current day of the week.
+
+if( `date` =~ /\A(Sat|Sun)/ ){
+    print "go play!\n";
+} else {
+    print "get to work!\n";
+}

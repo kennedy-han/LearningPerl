@@ -1,0 +1,26 @@
+total 104
+drwxr-xr-x   2 root root  4096  6月 28 16:19 bin
+drwxr-xr-x   4 root root  4096  6月 24 11:01 boot
+drwxrwxr-x   2 root root  4096  5月 19  2015 cdrom
+drwxr-xr-x  16 root root  4220  8月 15 09:36 dev
+drwxr-xr-x 131 root root 12288  8月 15 09:36 etc
+drwxr-xr-x   4 root root  4096  5月 19  2015 home
+lrwxrwxrwx   1 root root    33  5月 19  2015 initrd.img -> boot/initrd.img-3.16.0-30-generic
+drwxr-xr-x  23 root root  4096  9月  8  2015 lib
+drwxr-xr-x   2 root root  4096  9月  8  2015 lib32
+drwxr-xr-x   2 root root  4096  9月  8  2015 lib64
+drwx------   2 root root 16384  5月 19  2015 lost+found
+drwxr-xr-x   2 root root  4096  6月 24 10:10 mainboot
+drwxr-xr-x   4 root root  4096  5月 19  2015 media
+drwxr-xr-x   3 root root  4096  9月  8  2015 mnt
+drwxr-xr-x   2 root root  4096  2月 19  2015 opt
+dr-xr-xr-x 486 root root     0  8月 15 09:35 proc
+drwx------   3 root root  4096  6月 24 10:34 root
+drwxr-xr-x  24 root root   840  8月 15 09:48 run
+drwxr-xr-x   2 root root 12288  9月  8  2015 sbin
+drwxr-xr-x   2 root root  4096  2月 19  2015 srv
+dr-xr-xr-x  13 root root     0  8月 15 14:30 sys
+drwxrwxrwt   9 root root  4096  8月 15 14:41 tmp
+drwxr-xr-x  11 root root  4096  9月  8  2015 usr
+drwxr-xr-x  13 root root  4096  2月 19  2015 var
+lrwxrwxrwx   1 root root    30  5月 19  2015 vmlinuz -> boot/vmlinuz-3.16.0-30-generic
