@@ -1,6 +1,6 @@
 This is the code base with <Learning Perl> 6th edition published by O'REILLY
 
-every exercise code for each chapter.
+Every exercise code for each chapter. But some of those are not official answer.
 
 cpanm it's a tool for install new module from CPAN.
 cpanm used after chapter 11.
