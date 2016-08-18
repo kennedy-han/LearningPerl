@@ -1,0 +1,27 @@
+#!/usr/bin/perl -w
+
+# reads a list of strings from "sample_text.txt" and ask you to input a pattern to matching the strings.
+
+my $filename = './sample_text.txt';
+open my $fh, '<', $filename
+    or die "Can't open '$filename': $!";
+
+chomp(my @strings = <FILE>);
+
+while(1) {
+    print "Please enter a pattern: ";
+    chomp(my $pattern = <STDIN>);
+    last if $pattern =~ /\A\s*\Z/;
+    my @matches = eval {
+        grep /$pattern/, @strings;
+    };
+
+    if($@) {
+        print "Error: $@";
+    } else {
+        my $count = @matches;
+        print "There were $count matching strings:\n",  map "$_\n", @matches;
+    }
+
+    print "\n";
+}
